@@ -7,7 +7,7 @@ import { clerkClient } from '@clerk/express';
 dotenv.config();
 
 const STRIPE_KEY = process.env.STRIPE_KEY;
-const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_URL = process.env.VITE_FRONTEND_URL;
 const MAJOR_ADMIN_ID = process.env.MAJOR_ADMIN_ID || null;
 
 const stripe = process.env.STRIPE_SECRET_KEY
@@ -23,7 +23,7 @@ const safeNumber = (v) => {
 };
 
 const buildFrontendBase = (req) => {
-    if (FRONTEND_URL) return FRONTEND_URL.replace(/\/$/, "");
+    if (VITE_FRONTEND_URL) return VITE_FRONTEND_URL.replace(/\/$/, "");
     const origin = req.get("origin") || req.get("referer");
     if (origin) return origin.replace(/\/$/, "");
     const host = req.get("host");
@@ -285,7 +285,7 @@ export const createAppointment = async (req, res) => {
 
         const frontBase = buildFrontendBase(req);
         if (!frontBase) {
-            return res.status(500).json({ success: false, message: "Frontend URL could not be determined. Set FRONTEND_URL or send Origin header." });
+            return res.status(500).json({ success: false, message: "Frontend URL could not be determined. Set VITE_FRONTEND_URL or send Origin header." });
         }
 
         const successUrl = `${frontBase}/appointment/success?session_id={CHECKOUT_SESSION_ID}`;

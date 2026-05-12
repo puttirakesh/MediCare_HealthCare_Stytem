@@ -36,7 +36,7 @@ function parseTimeString(timeStr) {
 }
 
 const buildFrontendBase = (req) => {
-    const env = process.env.FRONTEND_URL;
+    const env = process.env.VITE_FRONTEND_URL;
     if (env) return env.replace(/\/$/, "");
     const origin = req.get("origin") || req.get("referer") || null;
     return origin ? origin.replace(/\/$/, "") : null;
@@ -170,7 +170,7 @@ export const createServiceAppointment = async (req, res) => {
         // Online booking (Stripe)
         if (!stripe) return res.status(500).json({ success: false, message: "Stripe not configured on server" });
         const frontendBase = buildFrontendBase(req);
-        if (!frontendBase) return res.status(500).json({ success: false, message: "Frontend base URL not available. Set FRONTEND_URL or provide Origin header." });
+        if (!frontendBase) return res.status(500).json({ success: false, message: "Frontend base URL not available. Set VITE_FRONTEND_URL or provide Origin header." });
 
         const successUrl = `${frontendBase}/service-appointment/success?session_id={CHECKOUT_SESSION_ID}`;
         const cancelUrl = `${frontendBase}/service-appointment/cancel`;
