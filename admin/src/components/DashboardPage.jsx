@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { dashboardStyles as s } from '../assets/dummyStyles.js'
 import { BadgeIndianRupee, CalendarRange, CheckCircle, Dice1, Search, User, UserRoundCheck, XCircle } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_URL;
 const PATIENT_COUNT_API = `${API_BASE}/api/appointments/patients/count`;
 
 //helper functions
