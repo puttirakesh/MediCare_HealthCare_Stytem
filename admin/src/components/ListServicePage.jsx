@@ -13,7 +13,7 @@ import {
 import { serviceListStyles as s } from "../assets/dummyStyles";
 
 const ListServicePage = ()=>  {
-  const API_BASE = import.meta.env.VITE_API_BASE;;
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const [services, setServices] = useState([]);
   const [openDetails, setOpenDetails] = useState({});

@@ -4,7 +4,7 @@ import { addServiceStyles as as } from '../assets/dummyStyles.js'
 import { AlertTriangle, Clock, CheckCircle, XCircle, Image as ImageIcon, Plus, Trash2, Calendar } from 'lucide-react'
 
 const AddservicesPage = ({ serviceId }) => {
-    const API_BASE = import.meta.env.VITE_API_BASE;
+    const API_BASE = import.meta.env.VITE_API_URL;
     const fileRef = useRef(null);
     const [imagePreview, setImagePreview] = useState(null);
     const [imageFile, setImageFile] = useState(null);
