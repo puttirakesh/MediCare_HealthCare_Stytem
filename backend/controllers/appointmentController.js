@@ -446,8 +446,8 @@ export const createCheckoutSession = async (req, res) => {
                 patientName,
                 mobile,
             },
-            success_url: `http://localhost:5173/appointment/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `http://localhost:5173/appointment/cancel`,
+            success_url: `https://medicare-health-care-stytem-fnt.vercel.app/appointment/success`,
+            cancel_url: `https://medicare-health-care-stytem-fnt.vercel.app/appointment/cancel`,
         });
 
         res.json({ url: session.url });

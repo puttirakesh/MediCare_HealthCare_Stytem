@@ -12,7 +12,7 @@ import { useAuth } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 import { serviceDetailStyles, iconSize } from "../assets/dummyStyles.js";
 
-const DEFAULT_HOST = "http://localhost:5000".replace(/\/$/, "");
+const DEFAULT_HOST = import.meta.env.VITE_API_BASE.replace(/\/$/, "");
 
 const ServiceDetail = () => {
   const { id } = useParams();
