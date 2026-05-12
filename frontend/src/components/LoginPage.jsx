@@ -9,7 +9,7 @@ import { ArrowLeft, Shield, Lock, Mail, Eye, EyeOff, Users,Sparkles, Heart, Acti
 const STORAGE_KEY = 'doctorToken_v1'
 
 const LoginPage = () => {
-    const API_BASE = "http://localhost:5000"
+    const API_BASE = import.meta.env.VITE_API_BASE;
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [busy, setBusy] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
