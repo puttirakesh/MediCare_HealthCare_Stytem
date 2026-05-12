@@ -18,7 +18,7 @@ const allowedOrigins =[
     "http://localhost:5173",
     "http://localhost:5174",
     "https://medicare-health-care-stytem-fnt.vercel.app/",
-    "https://medi-care-health-care-stytem.vercel.app/",
+    "https://medi-care-health-care-stytem-adm.vercel.app/",
 ]
 
 // middleware 
